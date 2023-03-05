@@ -1,0 +1,466 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+body{
+    background-image: url('../img/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+:root{
+    font-family: 'Red Hat Text', sans-serif;
+    font-size: 1vw;
+}
+.container{
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+    left: 7.552vw;
+    top: 6.042vw;
+}
+.logo{
+    position: relative;
+    inset: 0;
+    left: 0;
+    top: 0;
+    width: 4.844vw;
+    height: 4.844vw;
+}
+.nav{
+    position: absolute;
+    top: 1.583vw;
+    left: 12.708vw;
+    white-space: nowrap;
+}
+.button{
+    cursor: pointer;
+    display: inline-block;
+    min-width: 2.063vw;
+    padding-left: 1.094vw;
+    padding-right: 1.094vw;
+    height: 1.615vw;
+    margin-right: 0.521vw;
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 0.156vw;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.625rem;
+    line-height: 1.615vw;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+}
+.button.selected{
+    background: #0374b5;
+    color: #292929;
+}
+.label{
+    position: relative;
+    top: 6vw;
+    left: 1.354vw;
+    width: 22.813vw;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.25rem;
+    line-height: 2.083vw;
+    letter-spacing: 0.015em;
+    color: #FFFFFF;
+}
+.desc{
+    position: relative;
+    top: 7.046vw;
+    left: 1.354vw;
+    width: 22.813vw;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.094vw;
+    letter-spacing: 0.015em;
+    color: rgba(255, 255, 255, 0.57);
+}
+.discord-container{
+    position: relative;
+    top: 9.846vw;
+    left: 1.354vw;
+    width: 22.813vw;
+    height: 5.365vw;
+    background: #8686862f;
+    border: 0.078vw solid rgba(0, 0, 0, 0.07);
+    border-radius: 0.521vw;
+}
+.discord-container .discord-bg{
+    position: absolute;
+    inset: 0;
+    top: 1.406vw;
+    left: 1.250vw;
+    width: 2.604vw;
+    height: 2.604vw;
+    background: #0374b5;
+    border-radius: 0.365vw;
+}
+.discord-bg img{
+    position: absolute;
+    top: 0.833vw;
+    left: 0.833vw;
+    width: 0.938vw;
+}
+.discord-container .label{
+    position: absolute;
+    inset: 0;
+    top: 2.120vw;
+    left: 4.948vw;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.354vw;
+    color: #ffffff;
+}
+.discord-container .member-count{
+    position: absolute;
+    inset: 0;
+    left: 4.948vw;
+    top: 2.917vw;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 0.990vw;
+    color: #ffffff;
+}
+.discord-container .btn {
+    cursor: pointer;
+    position: absolute;
+    right: 1.198vw;
+    top: 2.083vw;
+    width: fit-content;
+    height: 1.615vw;
+    background: #0374b5;
+    border-radius: 0.156vw;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.625rem;
+    line-height: 1.615vw;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding-left: 1.094vw;
+    padding-right: 1.771vw;
+}
+.discord-container .btn img{
+    position: absolute;
+    top: 0.573vw;
+    right: 0.781vw;
+    width: 0.521vw;
+}
+
+.music-container{
+    position: absolute;
+    right: 3.594vw;
+    bottom: 3.594vw;
+    width: 11.927vw ;
+    height: 5.365vw ;
+    background-color: #0374b5;
+    background-size: cover;
+    border-radius: 0.521vw;
+    transition-duration: 1s !important;
+    transition-timing-function: linear;
+}
+.music-container .circle{
+    position: absolute;
+    top: -1.198vw;
+    right: -1.198vw;
+    cursor: pointer;
+    width: 2.344vw;
+    height: 2.344vw;
+    background-color: #FFFFFF;
+    border-radius: 100%;
+}
+.music-container .circle .bar1{
+    position: absolute;
+    top:1.131vw;
+    left: 0.729vw;
+    width: 0.938vw;
+    height: 0.134vw;
+    border-radius: 0.134vw;
+    background-color: #000000;
+}
+.music-container .circle .bar2{
+    position: absolute;
+    top:1.131vw;
+    left: 0.729vw;
+    width: 0.938vw;
+    height: 0.134vw;
+    border-radius: 0.134vw;
+    background-color: #000000;
+    transform: rotate(90deg);
+    transition-duration: 1s !important;
+    transition-timing-function: linear;
+}
+.music-container.active{
+    transition-duration: 1s !important;
+    transition-timing-function: linear;
+    width: 28.490vw;
+}
+.bar2.active {  
+    transform: rotate(180deg) !important;
+    transition-duration: 1s !important;
+    transition-timing-function: linear;
+}
+.music-container .label{
+    position: absolute;
+    inset: 0;
+    top: 1.510vw;
+    left: 10.417vw;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.354vw;
+    color: #FFFFFF;
+}
+.music-container .author{
+    position: absolute;
+    inset: 0;
+    top: 2.865vw;
+    left: 10.417vw;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 0.990vw;
+    color: rgba(255, 255, 255, 0.5);
+}
+.music-container img {
+    position: absolute;
+    inset: 0;
+    top: -3.25vw;
+    left: -2.3vw;
+    width: 10.625vw;
+    height: 8.594vw;
+}
+.music-container .visualizer{
+    position: absolute;
+    top: 2.292vw;
+    left: 8.594vw;
+    width: 1.833vw;
+    height: 0.833vw;
+}
+.visualizer .bar {
+    position: relative;
+    display: inline-flex;
+    margin-right: -0.05vw;
+    height: 0.833vw;
+    width: 0.208vw;
+    border-radius: 0.208vw;
+    background-color: #ffffff;
+}
+.music-container .back {
+    cursor: pointer;
+    position: absolute ;
+    top: 2.135vw ;
+    left: 21.094vw;
+    width: 0.990vw;
+    height:0.990vw ;
+}
+.music-container .pause{
+    cursor: pointer;
+    position: absolute;
+    top: 2.135vw;
+    left: 23.542vw;
+    width: 0.938vw;
+    height: 1.146vw;
+}
+.music-container .forward{
+    cursor: pointer;
+    position: absolute;
+    top: 2.135vw;
+    left: 25.938vw;
+    width: 0.990vw;
+    height:0.990vw ;
+}
+.music-container .play{
+    cursor: pointer;
+    position: absolute;
+    top: 2.135vw;
+    left: 23.542vw;
+    width: 0.938vw;
+    height: 1.146vw;
+}
+
+.label2{
+    position: relative;
+    left: 0;
+    top: 3.333vw;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.25rem;
+    line-height: 2.083vw;
+    letter-spacing: 0.015em;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.news-container{
+    position: relative;
+    width: 23.813vw;
+    top: 4.7vw;
+    height: 35.354vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.news-container::-webkit-scrollbar {
+    display: none;
+}
+
+.news-container .news {
+    position: relative;
+    width: 22.813vw;
+    height: fit-content;
+    background: #FFFFFF;
+    border: 0.078vw solid rgba(255, 255, 255, 0.736); 
+    border-radius: 0.521vw;     
+    padding-top: 1.250vw;
+    padding-bottom: 1.250vw;
+    margin-top: 1.695vw;
+
+}
+.news .label {
+    position: relative;
+    top:0;
+    left: 1.615vw;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: #000000;
+}
+.news .date{
+    position: absolute;
+    right: 0.1vw;
+    top: 0.815vw;
+    width: 4.688vw;
+    height: 1.615vw;
+    background: lightgray;
+    border-radius: 0.521vw 0.521vw 0px 0.521vw;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.625rem;
+    line-height: 1.615vw;
+    text-align: center;
+    text-transform: uppercase;
+    color: #292929;
+}
+.news .news-desc{
+    position: relative;
+    left: 1.615vw;
+    width: 19.583vw ;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.56);
+}
+
+.news img {
+    position: relative;
+    inset: 0;
+    left: -0.1vw;
+    top: 1.65vw;
+    height: 8.777vw;
+    width: 23vw;
+    border-radius: 0px 0px 0.521vw 0.521vw;
+}
+
+.team-container{
+    position: relative;
+    top: 4.7vw;
+    width: 23.813vw;
+    height: 35.354vw;
+    font-size: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: block;  
+}
+.team-container::-webkit-scrollbar {
+    display: none;
+}
+
+.team-container .member{
+    position: relative;
+    display: inline-flex;
+    width: 11.406vw;
+    height: 11.458vw;
+    background: rgba(18,54,43,50);
+    border: 0.052vw solid rgba(18,54,43,50);
+}
+.member:hover{
+    background: #FFFFFF;
+}
+.member:hover > .discord{
+    color: #000000;
+}
+.member:hover > .role{
+    color: rgba(0, 0, 0, 0.38);
+}
+.member:hover > .shadow{
+    background: linear-gradient(180.15deg, rgba(255, 255, 255, 0) 44.94%, #FFFFFF 95.62%);
+}
+.member .discord{
+    position: absolute;
+    left: 1.042vw;
+    top: 8.646vw;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 0.938vw;
+    letter-spacing: 0.015em;
+    color: #FFFFFF;;
+    text-transform: uppercase;
+}
+.member .role{
+    position: absolute;
+    inset: 0;
+    left: 1.042vw;
+    top: 9.688vw;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 0.677vw;
+    letter-spacing: 0.165em;
+    color: rgba(255, 255, 255, 0.28);
+}
+.member img{
+    position: absolute;
+    top: 0.833vw;
+    left: 1.719vw;
+    width: 7.969vw;
+    height: 7.344vw;
+    z-index: 0;
+}
+.member .shadow{
+    position: absolute;
+    top: 0.833vw;
+    left: 1.719vw;
+    width: 7.969vw;
+    height: 7.344vw;
+    background: linear-gradient(185.81deg, rgba(0, 0, 0, 0) 45.42%, #000000 95.78%);
+    z-index: 10;
+}
+
+.bar.active {
+    animation: 1.2s music infinite linear;
+}
+.bar.active2 {
+    animation: 1s music infinite linear;
+}
+.bar.active3 {
+    animation: 1.1s music infinite linear;
+}
+@keyframes music {
+    0%{
+        height: 0.233vw;
+    }
+    50%{
+        height: 0.833vw;
+    }
+    100%{
+        height: 0.233vw;
+    }
+}
+a{
+    text-decoration: none;
+}

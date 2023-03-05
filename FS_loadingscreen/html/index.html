@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureService_Loadingscreen</title>
+    <link rel="stylesheet" href="style/main.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="script/main.js"></script>
+</head>
+<body x-data="Main" x-init="listen">
+    <div class="container">
+        <img src="img/logo.png" alt="" class="logo">
+        <div class="nav">
+            <template x-for="button in buttons">
+                <div class="button" :class="button.selected ? 'selected':''" x-text="button.label" @click="button.selected = selectBtn(button.selected)">Home</div>
+            </template>
+        </div>
+        <div class="home" x-show="buttons[0].selected" x-transition:enter.duration.500ms>
+            <div class="label">FutureRP</div>
+            <div class="desc">This is a showcase of the loadingscreen from FutureService</div>
+            <div class="discord-container">
+                <div class="discord-bg">
+                    <img src="img/discord-logo.svg" alt="">
+                </div>
+                <div class="label">Our Discord</div>
+                <div class="member-count" x-text="memberCount + ' members'"></div>
+                <a class="btn" :href="DiscordInviteLink" target="_blank" @click="window.invokeNative('openUrl', DiscordInviteLink);">JOIN<img src="img/arrow.svg" alt="" x-transition></a>
+            </div>
+        </div>
+        <div class="news" x-show="buttons[1].selected" x-transition:enter.duration.500ms>
+            <div class="label2">News</div>
+            <div class="desc" style="left: 0; top: 3.5vw;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
+            <div class="news-container">
+                <div class="news">
+                    <div class="date">2023.03.03</div>
+                    <div class="label">Event X/Y</div>
+                    <div class="news-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</div>
+                </div>
+                <div class="news">
+                    <div class="date">2023.08.03</div>
+                    <div class="label">Event X/Y</div>
+                    <div class="news-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</div>
+                </div>
+                <div class="news">
+                    <div class="date">2023.10.05</div>
+                    <div class="label">Event X/Y</div>
+                    <div class="news-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</div>
+                </div>
+                <div class="news">
+                    <div class="date">2023.12.30</div>
+                    <div class="label">Event X/Y</div>
+                    <div class="news-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</div>
+                </div>
+            </div>
+        </div>
+        <div class="team" x-show="buttons[2].selected" x-transition:enter.duration.500ms>
+            <div class="label2">Team</div>
+            <div class="desc" style="left: 0; top: 3.5vw;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
+            <div class="team-container">
+                <template x-for="member in team">
+                    <div class="member">
+                        <img :src="member.img" alt="">
+                        <div class="shadow"></div>
+                        <div class="discord" x-text="member.discord"></div>
+                        <div class="role" x-text="member.role"></div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="music-container" :class="musicOpen ? 'active':''">
+        <img src="img/music.png" alt="">
+        <div class="circle" @click="musicOpen = !musicOpen"> 
+            <div class="bar1"></div>
+            <div class="bar2" :class="musicOpen ? 'active':''"></div>
+        </div>
+        <div class="visualizer">
+            <div class="bar" :class="isMusicPlaying ? 'active':''"></div>
+            <div class="bar" :class="isMusicPlaying ? 'active2':''"></div>
+            <div class="bar" :class="isMusicPlaying ? 'active3':''"></div>
+        </div>
+        <div class="info" x-show="musicOpen" x-transition:enter.duration.3000ms x-transition:leave.duration.400ms>
+            
+            <div class="label" x-text="musicList[currentSong].label"></div>
+            <div class="author" x-text="musicList[currentSong].author"></div>
+            <img src="img/back.svg" alt="" class="back" @click="prev()">
+            <img src="img/pause.svg" alt="" class="pause" x-show="isMusicPlaying"  @click="pause()">
+            <img src="img/play.svg" alt="" class="play" x-show="!isMusicPlaying" @click="play()">
+            <img src="img/forward.svg" alt="" class="forward" @click="next()">
+        </div>
+    </div>
+
+
+</body>
+</html>
