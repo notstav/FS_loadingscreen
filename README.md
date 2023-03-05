@@ -11,8 +11,7 @@ start FS_loadingscreen
 
 
 
---This scripts was made by notstav#0662--
-    
 
-  ALL RIGHTS RESERVED TO FUTURESERVICE™ 
+    
+  All rights reserved to FutureService™ 
     https://discord.gg/dV3hUVUZ59
